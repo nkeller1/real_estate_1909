@@ -13,7 +13,6 @@ class Room
     @length * @width
   end
 
-
 end
 
 
