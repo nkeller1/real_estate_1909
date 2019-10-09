@@ -9,8 +9,10 @@ class HouseTest < Minitest::Test
 
   def setup
     @house = House.new("$400000", "123 sugar lane")
-    @room_1 = Room.new(:bedroom, 10, 13)
+    room = [
+    @room_1 = Room.new(:bedroom, 10, 13),
     @room_2 = Room.new(:bedroom, 11, 15)
+    ]
   end
 
   def test_it_exists
@@ -26,7 +28,11 @@ class HouseTest < Minitest::Test
   end
 
   def test_it_can_have_rooms
-    assert_equal
+    assert_equal [], @house.rooms
+  end
+
+  def test_rooms_can_contain_room
+    assert_equal [@room_1, @room_2], @house.rooms
   end
 
 end
