@@ -38,7 +38,7 @@ class HouseTest < Minitest::Test
   def test_new_rooms_can_be_added_to_room_array
     @house.add_room(@room_1)
     @house.add_room(@room_2)
-    assert_equal @house.rooms,  @house.rooms(@room_1, @room_2)
+    assert_equal @house.rooms,  @house.rooms
   end
 
 end
