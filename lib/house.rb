@@ -1,4 +1,4 @@
-
+require 'pry'
 
 class House
   attr_reader :price, :address
@@ -10,27 +10,19 @@ class House
 
   def rooms
     room = []
+    # room << 
   end
 
 end
 
 
-# pry(main)> require './lib/room'
-# #=> true
-#
-# pry(main)> require './lib/house'
-# #=> true
-#
-# pry(main)> house = House.new("$400000", "123 sugar lane")
-# #=> #<House:0x00007fccd30375f8...>
-#
-# pry(main)> house.price
-# #=> 400000
-#
-# pry(main)> house.address
-# #=> "123 sugar lane"
-#
-# pry(main)> house.rooms
+require './lib/room'
+require './lib/house'
+house = House.new("$400000", "123 sugar lane")
+house.price
+house.address
+house.rooms
+
 # #=> []
 #
 # pry(main)> room_1 = Room.new(:bedroom, 10, 13)
