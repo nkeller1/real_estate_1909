@@ -3,13 +3,13 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/room'
 require './lib/house'
-
+require 'pry'
 
 class HouseTest < Minitest::Test
 
   def setup
     @house = House.new("$400000", "123 sugar lane")
-    room = [
+    rooms = [
       @room_1 = Room.new(:bedroom, 10, 13),
       @room_2 = Room.new(:bedroom, 11, 15)
   ]
@@ -33,6 +33,12 @@ class HouseTest < Minitest::Test
 
   def test_rooms_can_contain_room
     assert_equal [@room_1], @house.add_room(@room_1)
+  end
+
+  def test_new_rooms_can_be_added_to_room_array
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    assert_equal @house.rooms,  @house.rooms(@room_1, @room_2)
   end
 
 end
